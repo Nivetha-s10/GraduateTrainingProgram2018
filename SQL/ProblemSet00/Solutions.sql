@@ -195,10 +195,10 @@ record count-2
 
 19) Select all department details of the Department with Maximum Employees
 
- select l.dept_id,l.dept_name,max(l.count) from (select e.dept_id,d.dept_name,count(*) as count from employee e inner join dept d where e.dept_id=d.dept_id group by d.dept_id) as l;
+select p.dept_id,p.dept_name,k.c1 from(select max(l.count) as c1 from (select e.dept_id,d.dept_name,count(*) as count from employee e inner join dept d where e.dept_id=d.dept_id group by d.dept_id) as l)  as k inner join  (select e.dept_id,d.dept_name,count(*) as count from employee e inner join dept d where e.dept_id=d.dept_id group by d.dept_id) as p where k.c1=p.count ;
 D01|Health|6
-
-record count-1
+D02|COmmunications|6
+record count-2
 
 20)Select the Employees who has Tim Cook as their manager
 
