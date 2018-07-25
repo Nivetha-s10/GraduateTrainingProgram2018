@@ -195,10 +195,6 @@ record count-2
 
 19) Select all department details of the Department with Maximum Employees
 
-select d1.dep_id,d1.dept_name,k.count from dept d1 inner join(select max(l.count) from dept d inner join (select e.dept_id,d.dept_name,count(*) as count from employee e inner join dept d where e.dept_id=d.dept_id group by d.dept_id) as l) as k where ;
-
-D01|Health|6
-
 select l.dept_id,l.dept_name,max(l.count) from dept d inner join (select e.dept_id,d.dept_name,count(*) as count from employee e inner join dept d where e.dept_id=d.dept_id group by d.dept_id) as l;
 D01|Health|6
 
