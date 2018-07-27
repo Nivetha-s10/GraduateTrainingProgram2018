@@ -1,0 +1,109 @@
+--Problem Set00 AGILE
+--Submitted By nivetha.seenivasan
+
+1)How does agile testing (development) methodology differ from other testing (development) methodologies?
+
+If you need to quickly release a basic product that you can later build on and add more features to, then the agile methodology may be more appropriate for the product to be delivered.
+
+The agile process is broken into individual models that designers work on whereas in other models it is not generally broken down into models.
+The customer has early and frequent opportunities to look at the product and make decision and changes to the project which fosters trust and satisafaction to the customer.
+It also requires close communication with developers and together analyze requirements and planning.
+
+2)What are the most important components of Agile?
+
+Individual and team interactions over processes and tools
+Working software over comprehensive documentation
+Customer collaboration over contract negotiation
+Responding to change over following a plan
+
+3)What is difference between Epic,features, User stories & Tasks?
+
+Epic: A very large user story that is eventually broken down into smaller stories.
+User story: A very high-level definition of a requirement, containing just enough information so that the developers 
+can implement it.In simple it is a Business Functionality.
+Feature: The characteristics  of a software application  ( for e.g., performance, portability, or functionality)
+
+
+4)Explain what is a product backlog in Scrum
+
+Product backlog is a list of everything that is included in a product.Also it would comprise stories awaiting completion.
+
+5)What is Scrum Sprint?
+
+A Sprint, a time-box of nearly 2 weeks or less than a month during which a releasable product Increment is created. 
+
+6)What are the artifacts of Scrum process?
+
+Product Backlog
+Sprint BackLog
+BurnDown Chart
+
+7)What do you understand by sprint backlog?
+
+The Sprint Backlog is the set of Product Backlog items selected for the Sprint, and plans for delivering the product Increment. 
+
+8)What is the role of the Product Owner?
+Product Owner is responsible for the prioritized work item list , for making decisions, and for providing information in a timely manner.
+Such as,
+Create and maintain the Product Backlog.
+Prioritize the features in the Backlog before Sprint.
+Organize Sprint Review Meetings.
+Attend Sprint Planning meetings.
+Clearly communicate the Business Requirements to the team.
+Look out for market trends and get feedback from stakeholders or customers.
+Build and maintain a relationship with the stakeholders.
+
+The Product Owner also acts like a stakeholder.
+
+9)What are the different roles in Scrum
+
+Product Owner
+Scrum Master
+Scrum Team
+
+10)What are the responsibilities of a Scrum Master
+
+Scrum master helps the team to do their best work.He supports and faciliates them with all the infrastructure or requirements.
+
+11)What are different ceremonies and their importance in Scrum?
+
+Stand up/Scrum call-Daily meetings to say what has been done and whar are he/she is to do next
+Sprint Planning-Planning the sprint activities before to be carried out in a timely manner.
+Sprint Demo-Demo of business logic after completion.
+Sprint retrospective-teams to discuss the things that are working, that they want to continue doing; the things that aren’t working, that they want to stop doing; and the things that they want to try in the next iteration to make things better, easier, or different.
+User Storey Grooming
+Sprint Review-is to showcase the work of the team.
+
+This ceremonies thus help in growing business value.
+
+12))What is the difference between Sprint Planning Meeting and Sprint Retrospective Meeting?
+
+Sprint Planning Metting -During the sprint planning meeting, the product owner describes the highest priority features to the team
+A sprint goal and a sprint backlog are decided here.
+
+Sprint Retrospective Metting-
+Using this approach each team member is asked to identify specific things that the team should:
+
+Start doing
+Stop doing
+Continue doing
+
+
+13)What is the difference between agile & scrum
+
+Agile methodology helps continuous iteration of development  in the SDLC process by breaking the product into granular builds.
+
+Scrum-
+
+Scrum is an agile process that helps in delivering the business value in the shortest time.
+
+14)What is AGILE?
+
+Agile is a approach to develop a software by continuous and frequent delivery of business values to the customer.It is done by breaking down the project into finest granular builds.
+
+15)What is the Daily Stand-Up?
+
+The team memnbers Daily report to say what has been done and whar are he/she is to do next.
+
+
+
