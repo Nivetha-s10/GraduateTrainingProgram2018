@@ -72,6 +72,8 @@ H193|Devon Hotel|Boston|1201|N|175
 H437|Clairmont Hotel|Boston|257|N|140
 H437|Clairmont Hotel|Boston|223|N|155
 
+RECORD COUNT-12
+                        
 2.List full details of all hotels in New York.
 
 select a.Hotel_No,a.Name,a.City,b.Room_No,b.Type,b.Price from Hotel a inner join Room b where a.Hotel_No=b.Hotel_No and a.City='New York';
@@ -81,6 +83,8 @@ H111|Empire Hotel|New York|412|N|145
 H235|Park Place|New York|1267|N|175
 H235|Park Place|New York|1289|N|195
 
+RECORD COUNT-4
+                   
 3.List the names and cities of all guests, ordered according to their cities.
 
 select * from GUEST order by City;
@@ -92,7 +96,8 @@ G230|TOM HANCOCK|PHILADELPHIA
 G256|ADAM WAYNE|PITTSBURGH
 G879|VANESSA PARRY|PITTSBURGH
 
-
+RECORD COUNT-6
+                        
 4.List all details for non-smoking rooms in ascending order of price.
 
 select * from Room where Type='N' order by Price;
@@ -106,13 +111,16 @@ select * from Room where Type='N' order by Price;
 467|H498|N|180
 1289|H235|N|195
 
+RECORD COUNT-8
+                        
 5.List the number of hotels there are.
 
 select count(Hotel_No) as COUNT from Hotel;
 
 6
 
-
+RECORD COUNT-1
+                        
 6.List the cities in which guests live. Each city should be listed only once.
 
 select distinct City from Guest;
@@ -123,14 +131,17 @@ BALTIMORE
 PHILADELPHIA
 ATLANTA
 
+RECORD COUNT-4
+                      
 7.List the average price of a room.
 
 select Type,avg(PRICE) as AVERAGE_PRICE from Room Group By Type;
 
- select Type,avg(PRICE) as AVERAGE_PRICE from Room Group By Type;
 N|165.625
 S|135.75
 
+RECORD COUNT-2
+                        
 8.List hotel names, their room numbers, and the type of that room.
 
 select a.Hotel_No,a.Name,b.Room_No,b.Type from Hotel a inner join Room b ON a.Hotel_No=b.Hotel_No;
@@ -148,6 +159,8 @@ H193|Devon Hotel|1201|N
 H437|Clairmont Hotel|257|N
 H437|Clairmont Hotel|223|N
 
+RECORD COUNT-12
+                        
 9.List the hotel names, booking dates, and room numbers for all hotels in New York.
 
 Select b.Name,a.Date_From,a.Date_To,a.Room_No,b.City from Booking a inner join Hotel b where a.Hotel_No=b.Hotel_No and b.City='New York';
@@ -156,6 +169,8 @@ Empire Hotel|10-AUG-99|15-AUG-99|412|New York
 Empire Hotel|18-AUG-99|21-AUG-99|412|New York
 Park Place|05-SEP-99|12-SEP-99|1267|New York
 
+RECORD COUNT-3
+                        
 10.What is the number of bookings that started in the month of September?
 
 Select * from Booking where Date_from Like '%SEP%';
@@ -164,6 +179,8 @@ H235|G879|05-SEP-99|12-SEP-99|1267
 H498|G230|15-SEP-99|18-SEP-99|467
 H193|G367|12-SEP-99|14-SEP-99|1001
 
+RECORD COUNT-3
+                        
 11.List the names and cities of guests who began a stay in New York in August.
 
 
@@ -171,6 +188,8 @@ select b.Hotel_No,h.Name,b.Room_No,b.Guest_No,g.Name,g.City,b.Date_From,b.Date_T
 
 H111|Empire Hotel|412|G256|ADAM WAYNE|PITTSBURGH|10-AUG-99|15-AUG-99
 H111|Empire Hotel|412|G367|TARA CUMMINGS|BALTIMORE|18-AUG-99|21-AUG-99
+                        
+RECORD COUNT-2
 
 12.List the hotel names and room numbers of any hotel rooms that have not been booked.
 
@@ -182,30 +201,31 @@ H111|Empire Hotel|313
 H432|Brownstone Hotel|876
 H432|Brownstone Hotel|898
 
+RECORD COUNT-5
+
 13.List the hotel name and city of the hotel with the highest priced room.
 
 select h.Hotel_No,h.Name,max(r.Price) from Hotel h inner Join Room r on h.Hotel_No=r.Hotel_No;
 
 H235|Park Place|195
 
-
+RECORD COUNT-1
+                        
 14.List hotel names, room numbers, cities, and prices for hotels that have rooms with prices lower than the lowest priced room in a Boston hotel.
 
 select h.Hotel_No,h.Name,r.Room_No,min(Price) from Room r inner join Hotel h on r.Hotel_No=h.Hotel_No where h.City='Boston';
 
 H437|Clairmont Hotel|257|140
 
-
+RECORD COUNT-1
 
 15.List the average price of a room grouped by city.
 
-
- select h.Hotel_No,h.Name,r.Room_No,avg(Price) from Room r inner join Hotel h on r.Hotel_No=h.Hotel_No group by City;
-
+select h.Hotel_No,h.Name,r.Room_No,avg(Price) from Room r inner join Hotel h on r.Hotel_No=h.Hotel_No group by City;
 
 H437|Clairmont Hotel|223|155.0
 H235|Park Place|1289|165.0
 H432|Brownstone Hotel|898|124.0
 H498|James Plaza|467|170.0
 
-
+RECORD COUNT-4
