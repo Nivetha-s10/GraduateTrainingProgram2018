@@ -1,3 +1,7 @@
+<PROBLEMSET 01> JULY 31,2018
+SUBMITTED BY nivetha.seenivasan
+
+
 Hotel              (Hotel_No, Name, City)
 
 create table Hotel(Hotel_No text PRIMARY KEY,Name text,City text);
