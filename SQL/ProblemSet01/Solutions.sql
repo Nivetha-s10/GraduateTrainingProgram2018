@@ -6,20 +6,6 @@ Hotel              (Hotel_No, Name, City)
 
 create table Hotel(Hotel_No text PRIMARY KEY,Name text,City text);
 
-Room               (Room_No, @Hotel_No, Type, Price)
-
-create table Room(Room_No text,Hotel_No text references Hotel(Hotel_No),Type text,Price text,Constraint pk_key PRIMARY KEY(Room_No,Hotel_No));
-
-
-Booking            (@Hotel_No, @Guest_No, Date_From, Date_To, @Room_No)
-
-create table Booking(Hotel_No text references Room(Hotel_No),Guest_No text references Guest(Guest_No),Date_From text,Date_To text,Room_No text references Room(Room_No),Constraint pk_key PRIMARY KEY(Hotel_No,Guest_no,Room_No));
-
-Guest              (Guest­_No, Name, City)
-
-create table Guest(Guest_No text PRIMARY KEY,Name text,City text);
-
-
 Insert into Hotel values('H111','Empire Hotel','New York');
 Insert into Hotel values ('H235','Park Place','New York');
 Insert into Hotel values('H432','Brownstone Hotel','Toronto');
@@ -28,11 +14,20 @@ Insert into Hotel values('H193','Devon Hotel','Boston');
 Insert into Hotel values('H437','Clairmont Hotel','Boston');
 
 
+Room               (Room_No, @Hotel_No, Type, Price)
+
+create table Room(Room_No text,Hotel_No text references Hotel(Hotel_No),Type text,Price text,Constraint pk_key PRIMARY KEY(Room_No,Hotel_No));
+
 Insert into Room values('313','H111','S',145.00);
 Insert into Room values('412','H111','N',145.00);
 Insert into Room values('1267','H235','N',175.00);
 Insert into Room values('1289','H235','N',195.00);
 Insert into Room values('876','H432','S','124.00);
+                        
+                        
+Booking            (@Hotel_No, @Guest_No, Date_From, Date_To, @Room_No)
+
+create table Booking(Hotel_No text references Room(Hotel_No),Guest_No text references Guest(Guest_No),Date_From text,Date_To text,Room_No text references Room(Room_No),Constraint pk_key PRIMARY KEY(Hotel_No,Guest_no,Room_No));
 
 INSERT INTO BOOKING VALUES('H111','G256','10-AUG-99','15-AUG-99',412);
 INSERT INTO BOOKING VALUES('H111','G367','18-AUG-99','21-AUG-99',412);
@@ -45,6 +40,11 @@ INSERT INTO BOOKING VALUES('H193','G367','12-SEP-99','14-SEP-99',1001);
 INSERT INTO BOOKING VALUES('H193','G367','01-OCT-99','06-OCT-99',1201);
 INSERT INTO BOOKING VALUES('H437','G190','04-OCT-99','06-OCT-99',223);
 INSERT INTO BOOKING VALUES('H437','G879','14-SEP-99','17-SEP-99',223);
+                        
+                        
+Guest              (Guest­_No, Name, City)
+
+create table Guest(Guest_No text PRIMARY KEY,Name text,City text);
 
 INSERT INTO GUEST VALUES('G256','ADAM WAYNE','PITTSBURGH');
 INSERT INTO GUEST VALUES('G367','TARA CUMMINGS','BALTIMORE');
