@@ -1,4 +1,5 @@
-
+--AUG 7,2018--
+--Submitted by nivetha.seenivasan--
 1. Why should you use a version control tool?
 
 Version control systems can solve the problem of reviewing and retrieving previous changes.It maintains history of changes made.
