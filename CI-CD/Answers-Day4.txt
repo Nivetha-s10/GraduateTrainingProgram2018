@@ -1,1 +1,60 @@
+1. What is meant by a Working copy in Version control?
+
+The local repository we are working using version control tool is the working copy.
+
+2. Which Git command is used to create a working copy of a repository on your machine?
+
+The 'git init' command is used to create a working copy of a repository on the local machine.
+
+3. What is the use of the GIT pull command?
+
+The 'git pull' command is used to move the files from the remote repository to the local repository.
+
+4. Which GIT command is used to move an untracked change into the staging area?
+
+The 'git add' command is used to move an untracked change into the staging area.
+
+5. How do you set up your SSH key settings in Github? What is the use of setting up SSH key?
+When working with a GitHub repository, you'll often need to identify yourself to GitHub using your username and password. 
+An SSH key is an alternate way to identify yourself that doesn't require you to enter you username and password every time.
+
+SSH keys come in pairs, a public key that gets shared with services like GitHub, and a private key that is stored only on your computer. 
+If the keys match, you're granted access.
+
+Before adding a new SSH key to your GitHub account, you should have:
+
+   * Checked for existing SSH keys
+	$ cd ~/.ssh
+	$ ls
+   * Generated a new SSH key and added it to the ssh-agent
+	$ ssh-keygen -o -t rsa -C "mail-id"
+
+SSH keys are used for authentication purpose.
+
+6. What is meant by a Branch in Version control? How do you create a new branch in GIT?
+
+A branch in Git is simply a movable pointer to the commits that we do.The 'git branch' command is used to create a new branch in GIT.
+
+
+7. Which branch gets created by default when you first create a repository in GIT?
+
+The 'master' branch gets created by default.
+
+8. Which of these facts about GIT is accurate ; 
+   
+   b) Changes made to files in GIT can be reversed by reverting to an earlier version of the file.
+
+   d) GIT is an open-source ,distributed version control tool.
+
+9. What is the difference between Git and Github?
+
+Git: It is a Version Control tool that helps to keep a track of all the changes you made in our source code by storing each change as a “version”.
+
+GitHub: It is a website that lets to host Git repositories. This is the place where we store our production ready code.
+
+
+10. What is meant by a repository in version control?
+
+The repository in version control is where we can store,share and retrieve files that are to be version controlled.
+
 
