@@ -1,0 +1,76 @@
+#1)get first name and last name from user and print your full name 
+
+"""
+fn=input("Enter First Name")
+ln=input("Enter Second Name")
+
+print("NAME IS " + fn + " " + ln);
+
+2) get your full name, age as input from user and print first name and last name , age using string slicing
+
+ i) 2 raw_input get name  and age 
+
+ ii) print first name and last name and age 
+
+
+NAME=raw_input("Enter NAME ");
+
+AGE=raw_input("Enter Age ");
+
+print("First Name -"+ NAME[0:8]);
+
+print("LAST Name -"+ NAME[8:19]);
+
+print("AGE -" + AGE);
+
+
+3)Calculating your birth number in numerology
+
+26/11/1978
+
+2+6+1+1+1+7+8 = 8
+
+
+DOB=raw_input("ENTER DATE OF BIRTH ");
+
+a=int(DOB[0])+int(DOB[1])+int(DOB[3])+int(DOB[4])+int(DOB[6])+int(DOB[7])+int(DOB[8])+int(DOB[9]);
+
+
+print(a);
+
+
+
+4) Write a Python program to perform sum of three given integers. 
+
+       However, if any of the two values are equal then sum will be zero (eg : 2+1+1 = 0)
+
+
+a=input("Enter 1st Number ");
+b=input("Enter 2nd Numnber ");
+c=input("Enter 3rd Number ");
+
+if(a==b or a==c or b==c) :print("SUM=%s" %0)
+
+else :print("SUM = %s" %(a+b+c))
+
+5)Declare a string variable - try all string functions / try string slicing with few examples
+
+
+***CAPITALIZE()***
+"""
+
+str='hello'
+print(str.capitalize());
+
+#***CENTER***
+
+print(str.center(10,"*"))
+
+#***COUNT()***
+str1="This is Python training.This is good"
+print(str1.count("This",0));
+
+#***split()***
+str="26/10/1996/165/12"
+print(str.split('/',3));
+
