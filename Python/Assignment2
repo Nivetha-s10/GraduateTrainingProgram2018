@@ -1,0 +1,196 @@
+#1)get first name and last name from user and print your full name 
+
+fn=input("Enter First Name")
+ln=input("Enter Second Name")
+
+print("NAME IS " + fn + " " + ln);
+
+OUTPUT: 
+
+C:\Users\training_c2d.02.11>python ass2.py
+Enter First Name"Nivetha"
+Enter Second Name"Seenivasan"
+NAME IS Nivetha Seenivasan
+
+2) get ur full name, age as input from user and print first name and last name , age using string slicing
+ i) 2 raw_input get name  and age 
+ ii) print first name and last name and age 
+ iii) WHEN age >= 18 , he/she is eligible to vote
+ iv) WHEN age < 18 , he/she is not eligible to vote
+
+
+NAME=raw_input("Enter NAME ");
+
+AGE=raw_input("Enter Age ");
+
+print("First Name -"+ NAME[0:8]);
+
+print("LAST Name -"+ NAME[8:19]);
+
+print("AGE -" + AGE);
+
+if int(AGE)>=18:
+    print(NAME+" is eligible to vote");
+
+else :
+    print(NAME+" is not eligible to vote");
+
+OUTPUT:
+
+Enter NAME Nivetha Seenivasan
+Enter Age 22
+First Name -Nivetha
+LAST Name -Seenivasan
+AGE -22
+Nivetha Seenivasan is eligible to vote
+
+C:\Users\training_c2d.02.11>python ass2.py
+Enter NAME Harshitha
+Enter Age 12
+First Name -Harshith
+LAST Name -a
+AGE -12
+Harshitha is not eligible to vote
+
+3)Calculating your birth number in numerology
+26/11/1978
+2+6+1+1+1+7+8 = 8
+
+DOB=raw_input("Enter Date of Birth with format DD/MM/YYYY")
+sum=0
+DOB=DOB.replace('/','');
+n=int(DOB)
+type(n)
+while(n>=1):
+    {
+    d=n%10
+    sum=sum+d
+    n=n/10
+    }
+while(sum>=10):
+    {
+     a=sum%10
+     c+=a
+     sum=sum/10
+     c=c+sum
+    }
+
+if(c>=10):
+    j=c/10
+    c=c%10
+    c=c+j
+
+
+print(c)
+
+
+4) Write a Python program to perform sum of three given integers. 
+       However, if any of the two values are equal then sum will be zero (eg : 2+1+1 = 0)
+
+a=input("Enter 1st Number ");
+b=input("Enter 2nd Numnber ");
+c=input("Enter 3rd Number ");
+
+if(a==b or a==c or b==c) :print("SUM=%s" %0)
+
+else :print("SUM = %s" %(a+b+c))
+
+
+
+5) Write a Python program to check whether a year is leap year or not
+
+
+year=raw_input("Enter a year ")
+
+if(int(year)%4==0 and int(year)%100==0 and int(year)%400 == 0) :
+    print(year + " is a leap year")
+else :
+    print(year + " is not a leap year")
+
+OUTPUT:
+
+Enter a year 1996
+1996 is a leap year
+
+6)Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
+
+
+str=raw_input("Enter String")
+upper=0
+lower=0
+
+for i in str:
+    if(i.isupper()):
+        upper+=1
+    if(i.islower()):
+        lower+=1
+
+print("UPPERCASE LETTERS ")
+print(upper)
+print("LOWERCASE LETTERS ")
+print(lower)
+
+7)  write a python script to validate the strong password (combination of characters alphabets and numbers,special characters in it. if not weak password)
+eg: Acc9876$
+it is strong password
+abcd
+it is weak password
+
+
+special="!@#$%^&*"
+c=0
+str=raw_input("Enter Password ")
+for i in str:
+    for j in special:
+        if(i==j):
+         c+=1
+
+if(c>1):
+    print("STRONG PASSWORD")
+else:
+    print("WEAK PASSWORD")
+
+OUTPUT:
+
+Enter Password Acc9876$$
+STRONG PASSWORD
+
+Enter Password ACC
+WEAK PASSWORD
+
+
+8) declare a list containing numbers
+    a) get only even numbers
+    b) perform sum of those even numbers
+
+list=range(11)
+sum=0
+for i in list :
+    if(i%2==0):
+        sum+=i
+
+print("SUM=" +str(sum))
+
+
+9) Write a program which accepts a sequence of comma-separated numbers from console and generate a list and a tuple which 
+contains every number.
+
+str=raw_input("Enter String value")
+print(str)
+type(str)
+list=str.split(',')
+
+tup=tuple(list)
+
+print("List is" )
+print(list)
+print("Tuple is")
+print(tup)
+
+OUTPUT:
+
+Enter String value34,12,15
+List is
+['34', '12', '15']
+Tuple is
+('34', '12', '15')
