@@ -1,0 +1,141 @@
+"""
+str=raw_input("Enter full name")
+list=str.split(" ")
+i=0
+while(i<len(list)):
+    list[i]=list[i].capitalize()
+    i=i+1
+
+str=" ".join(list)
+print(str)
+
+
+list=[]
+def insert_fun(pos,element):
+    list.insert(pos,element)
+
+def remove_fun(element):
+    list.remove(element)
+
+def append_fun(element):
+    list.append(element)
+
+def sort_fun():
+    list.sort()
+
+def pop_fun():
+    list.pop()
+
+def reverse_fun():
+    list.reverse()
+
+def print_fun():
+    print(list)
+
+
+i=int(raw_input("Enter no of operations"))
+
+for j in range(i):
+    command=raw_input("enter command ")
+    
+    if(command=="insert"):
+        insert_fun(input(),input())
+    
+    elif(command=="print"):
+        print_fun()
+    elif(command=="remove"):
+        remove_fun(input())
+    elif(command=="append"):
+        append_fun(input())
+    elif(commad=="sort"):
+        sort_fun()
+    elif(command=="pop"):
+        pop_fun()
+    elif(command=="reverse"):
+        reverse_fun()
+    
+        
+
+
+def divide(a,b):
+    try:
+        c=int(a)/int(b)
+        print c
+    except Exception as error:
+        print error	
+        
+        
+testcases=int(raw_input("Enter no of testcase"))
+
+for i in range(testcases):
+    a=raw_input()
+    list=
+    divide(a,b)
+
+"""
+       
+class shapes:
+
+    def area_rect(self,length,breadth):
+		if(length>0 and breadth>0):
+            return length * breadth
+		else:
+		    return "no negative inputs"
+	
+    def area_circle(self,radius):
+	    if(radius>0)
+            return 3.14*radius*radius
+		else:
+		    return "no negative inputs"
+		
+
+obj=shapes()
+
+print("Area of Rectangle"+str(obj.area_rect(5,10)))
+print("Area of circle"+str(obj.area_circle(5)))
+
+
+"""
+testcases = int(raw_input("Enter no of testcases"))
+listA = []
+listB = []
+
+for i in range(testcases):
+    setAcount = int(raw_input("Enter no of elements in set A"))
+    for j in range(setAcount):
+        a = int(raw_input())
+        listA.append(a)
+    A = set(listA)
+    setBcount = int(raw_input("Enter no of elements in set B"))
+    for k in range(setBcount):
+        listB.append(int(raw_input()))
+    B = set(listB)
+    print(A.issubset(B))
+"""
+str=raw_input("Enter String")
+d={}
+cnt=0
+sub=set(str)
+for j in sub:
+    cnt=str.count(j)
+    d[j]=cnt
+
+l=set(d.values())
+print l
+a=list(l)
+if(len(a)>=3):
+    a=a[-3]
+else:
+    a=a[len(a)]
+print(type(a))
+print a
+print(d)
+for j in l:
+    for k,v in d.iteritems():
+        if(v==j):
+            print(k,v)
+
+    
+
+
+
