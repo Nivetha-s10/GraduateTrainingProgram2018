@@ -1,0 +1,59 @@
+
+ Submitted BY Nivetha Seenivasan   
+
+1)from flask import Flask
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run()
+
+
+2)
+from flask import Flask, redirect, url_for, request
+import re
+app = Flask(__name__)
+
+@app.route('/success/<name>')
+def success(name):
+   
+    if(re.match(r'((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,})',name)):
+        return "Strong"
+    else :
+        return "weak"
+
+
+@app.route('/login',methods = ['POST', 'GET'])
+def login():
+   if request.method == 'POST':
+      user = request.form['nm']
+      return redirect(url_for('success',name = user))
+   else:
+      user = request.args.get('nm')
+      return redirect(url_for('success',name = user))
+
+if __name__ == '__main__':
+   app.run(debug = True)
+   
+3)
+import re
+def regular(value):
+	if re.match(r'((?=^[456]+)).{4}([-]*)((?=[0-9]+)).{4}([-]*)((?=[0-9]+)).{4}([-]*)((?=[0-9]+)).{4}',value):
+		print("valid")
+	else:
+		print("invalid")
+	
+
+n=raw_input("enter the value of n")
+if int(n)<=11:
+	for i in range(int(n)):
+		value=raw_input("enter the value")
+		regular(value)
+		
+else:
+	print "give n less than 11"
+
