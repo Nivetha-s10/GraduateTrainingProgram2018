@@ -1,0 +1,182 @@
+Submitted By Nivetha Seenivasan
+
+--Problem Set1--
+
+import pandas as pd
+import csv
+
+chipo = pd.read_csv('chipotle.tsv',delimiter='\t')
+
+df=chipo[['item_name','item_price']]
+
+print(chipo.sort_values(['item_name']))
+
+print(pd.value_counts('Veggie Soft Bowl'))
+
+
+      order_id     ...      item_price
+3389      1360     ...         $12.98 
+341        148     ...          $6.49 
+1849       749     ...          $6.49 
+1860       754     ...          $6.49 
+2713      1076     ...          $6.49 
+3422      1373     ...          $6.49 
+553        230     ...          $6.49 
+1916       774     ...          $6.49 
+1922       776     ...          $6.49 
+1937       784     ...          $6.49 
+3836      1537     ...          $6.49 
+298        129     ...          $6.49 
+1976       798     ...          $6.49 
+1167       481     ...          $6.49 
+3875      1554     ...          $6.49 
+1124       465     ...          $6.49 
+3886      1558     ...          $6.49 
+2108       849     ...          $6.49 
+3010      1196     ...          $6.49 
+4535      1803     ...          $6.49 
+4169      1664     ...          $6.49 
+4174      1666     ...          $6.49 
+4527      1800     ...          $6.49 
+4522      1798     ...          $6.49 
+3806      1525     ...          $6.49 
+2389       949     ...          $6.49 
+3132      1248     ...          $6.49 
+3141      1253     ...          $6.49 
+639        264     ...          $6.49 
+1026       422     ...          $6.49 
+...        ...     ...             ...
+2996      1192     ...          $8.49 
+3163      1263     ...          $8.49 
+4084      1635     ...          $8.49 
+1694       686     ...          $8.49 
+2756      1094     ...          $8.49 
+4201      1677     ...         $11.25 
+1884       760     ...         $11.25 
+455        195     ...         $11.25 
+3223      1289     ...         $11.25 
+2223       896     ...          $8.75 
+2269       913     ...          $8.75 
+4541      1805     ...          $8.75 
+3293      1321     ...          $8.75 
+186         83     ...         $11.25 
+960        394     ...          $8.75 
+1316       536     ...          $8.75 
+2156       869     ...         $11.25 
+4261      1700     ...         $11.25 
+295        128     ...         $11.25 
+4573      1818     ...          $8.75 
+2683      1066     ...          $8.75 
+496        207     ...         $11.25 
+4109      1646     ...         $11.25 
+738        304     ...         $11.25 
+3889      1559     ...         $16.98 
+2384       948     ...          $8.75 
+781        322     ...          $8.75 
+2851      1132     ...          $8.49 
+1699       688     ...         $11.25 
+1395       567     ...          $8.49 
+
+[4622 rows x 5 columns]
+Veggie Soft Bowl    16
+dtype: int64
+
+
+
+--PROBLEM SET 2--
+
+import pandas as pd
+
+raw_data1 = {
+        'subject_id': ['1', '2', '3', '4', '5'],
+        'first_name': ['Alex', 'Amy', 'Allen', 'Alice', 'Ayoung'], 
+        'last_name': ['Anderson', 'Ackerman', 'Ali', 'Aoni', 'Atiches']}
+data1=pd.DataFrame(raw_data1)
+raw_data2 = {
+        'subject_id': ['4', '5', '6', '7', '8'],
+        'first_name': ['Billy', 'Brian', 'Bran', 'Bryce', 'Betty'], 
+        'last_name': ['Bonder', 'Black', 'Balwner', 'Brice', 'Btisan']}
+data2=pd.DataFrame(raw_data2)
+raw_data3 = {
+        'subject_id': ['1', '2', '3', '4', '5', '7', '8', '9', '10', '11'],
+        'test_id': [51, 15, 15, 61, 16, 14, 15, 1, 61, 16]}
+data3=pd.DataFrame(raw_data3)
+
+print data3
+1)  Join the two dataframes along rows and assign it to all_data
+
+all_data_row=pd.concat([data1,data2])
+#all_data_row=pd.merge(data1,data2,how="outer")
+print("two dataframes along rows")
+
+print all_data_row
+
+two dataframes along rows
+  first_name last_name subject_id
+0       Alex  Anderson          1
+1        Amy  Ackerman          2
+2      Allen       Ali          3
+3      Alice      Aoni          4
+4     Ayoung   Atiches          5
+0      Billy    Bonder          4
+1      Brian     Black          5
+2       Bran   Balwner          6
+3      Bryce     Brice          7
+4      Betty    Btisan          8
+
+
+2)
+all_data_col=pd.concat([data1,data2],axis=1)
+print("two dataframes along columns")
+print all_data_col
+
+two dataframes along columns
+  first_name last_name subject_id first_name last_name subject_id
+0       Alex  Anderson          1      Billy    Bonder          4
+1        Amy  Ackerman          2      Brian     Black          5
+2      Allen       Ali          3       Bran   Balwner          6
+3      Alice      Aoni          4      Bryce     Brice          7
+4     Ayoung   Atiches          5      Betty    Btisan          8
+
+3)Merge all_data and data3 along the subject_id value
+df=pd.merge(all_data_row,data3)
+
+print df
+
+two dataframes along columns
+  first_name last_name subject_id first_name last_name subject_id
+0       Alex  Anderson          1      Billy    Bonder          4
+1        Amy  Ackerman          2      Brian     Black          5
+2      Allen       Ali          3       Bran   Balwner          6
+3      Alice      Aoni          4      Bryce     Brice          7
+4     Ayoung   Atiches          5      Betty    Btisan          8
+
+4) Merge only the data that has the same 'subject_id' on both data1 and data2
+
+print("to Merge only the data that has the same 'subject_id' on both data1 and data2")
+
+df1=pd.merge(data1,data2,how="inner" ,on='subject_id')
+print df1
+
+0        Alice        Aoni          4        Billy      Bonder
+1       Ayoung     Atiches          5        Brian       Black
+
+
+5)Merge all values in data1 and data2, with matching records from both sides where available.
+df2=pd.merge(data1,data2,how="outer",on='subject_id')
+
+print("Merge all values in data1 and data2, with matching records from both sides where available")
+
+print df2
+
+0         Alex    Anderson          1          NaN         NaN
+1          Amy    Ackerman          2          NaN         NaN
+2        Allen         Ali          3          NaN         NaN
+3        Alice        Aoni          4        Billy      Bonder
+4       Ayoung     Atiches          5        Brian       Black
+5          NaN         NaN          6         Bran     Balwner
+6          NaN         NaN          7        Bryce       Brice
+7          NaN         NaN          8        Betty      Btisan
+
+
+
