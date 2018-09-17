@@ -1,0 +1,37 @@
+Submitted By Nivetha Seenivasan
+
+
+1)import os
+#os.chdir("aaa")
+for root, dirs, files in os.walk("aaa", topdown=False):
+	for name in files:
+		print(root,name)
+		print(os.path.join(root, name))
+	for name in dirs:
+		print(root,name)
+		print(os.path.join(root, name))
+
+
+2)import shutil
+import os
+import sys
+#import rpm
+import time
+import datetime
+def copyFile(src, dest):
+    try:
+		shutil.copy(src, dest)
+		shutil.copystat(src, dest)
+    # eg. src and dest are the same file
+    except shutil.Error as e:
+        print('Error: %s' % e)
+    # eg. source or destination doesn't exist
+    except IOError as e:
+        print('Error: %s' % e.strerror)
+
+
+
+today = datetime.date.today()
+print "The date is", today
+myFile = 'g2%s.txt' % today
+copyFile("g1.txt",myFile)
