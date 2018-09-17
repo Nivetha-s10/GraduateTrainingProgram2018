@@ -1,0 +1,84 @@
+Submitted By Nivetha Seenivasan
+
+
+1)class Shape:
+	def area(self):
+		areas=0
+		return areas
+		
+class Square(Shape):
+	def __init__(self,len):
+		self.len=len
+		self.area()
+	def area(self):
+		areas=int(self.len)* int(self.len)
+		return areas
+obj=Square(5)
+my_area=obj.area()
+print(my_area)
+obj1=Shape.area(self)
+
+2)class Person:
+	def get_Gender(self):
+		print("Person")
+	
+class Male(Person):
+	def get_Gender(self):
+		print("Male")
+
+class Female(Person):
+	def get_Gender(self):
+		print("Female")
+
+obj=Male()
+obj.get_Gender()
+obj1=Female()
+obj1.get_Gender()
+
+3)def spaces(s):
+	str1=""
+	for j in range(s):
+		str1=str1+" "
+	return str1
+def stars(star):
+	st=""
+	for j in range(star):
+		st=st+"*"
+	return st
+			
+
+s=input("enter the rows")	
+star=2
+for i in range(s):
+	strA=spaces(s-1)
+	strB=stars(star)
+	s=s-1
+	star=star+2
+	print(strA+strB)
+  
+  4)class Coordinate(object):
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+		self.eq()
+
+	def getX(self):
+       
+		return self.x
+
+	def getY(self):
+		return self.y
+
+	def __str__(self):
+		return '<' + str(self.getX()) + ',' + str(self.getY()) + '>'
+
+	def eq(self):
+		print(self.x==self.y)
+		
+	def __repr__(self):
+		x1=(eval(repr(self.x))==x)
+		y1=(eval(repr(self.y))==y)
+		return x1,y1
+    
+print(str(Coordinate(3.0,4)))
+print(str(repr(Coordinate(3.0,3))))
